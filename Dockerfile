@@ -15,5 +15,8 @@ RUN curl -L https://github.com/mimblewimble/grin/releases/download/v${VERSION}/g
 
 RUN useradd -m -u 1000 -s /bin/bash runner
 USER runner
+WORKDIR /home/runner
+
+COPY grin-server.toml /home/runner/grin-server.toml
 
 ENTRYPOINT ["grin"]
