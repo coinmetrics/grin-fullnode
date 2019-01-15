@@ -20,8 +20,9 @@ RUN set -ex; \
 ARG VERSION
 
 RUN set -ex; \
-	git clone --depth=1 --branch=${VERSION} https://github.com/mimblewimble/grin.git /root/grin; \
+	git clone https://github.com/mimblewimble/grin.git /root/grin; \
 	cd /root/grin; \
+	git checkout ${VERSION}; \
 	cargo build --release; \
 	true
 
