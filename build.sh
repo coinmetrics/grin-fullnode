@@ -3,11 +3,10 @@
 set -e
 
 export VERSION=$(cat version.txt)
-export VERSION_LONG=$(cat version_long.txt)
-echo "Image version ${VERSION} (long ${VERSION_LONG})."
+echo "Image version ${VERSION}."
 
 echo "Building image..."
-docker build --build-arg "VERSION=${VERSION}" --build-arg "VERSION_LONG=${VERSION_LONG}" -t "${DOCKER_REGISTRY_REPO}:${VERSION}" .
+docker build --build-arg "VERSION=${VERSION}" -t "${DOCKER_REGISTRY_REPO}:${VERSION}" .
 echo "Image ready."
 
 if [ -n "${DOCKER_REGISTRY}" ] && [ -n "${DOCKER_REGISTRY_USER}" ] && [ -n "${DOCKER_REGISTRY_PASSWORD}" ]
