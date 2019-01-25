@@ -14,9 +14,9 @@ docker pull quay.io/coinmetrics/fullnode-grin:<version>
 
 ## Security
 
-This image builds binaries from sources downloaded from https://github.com/mimblewimble/grin.
+The default image builds binaries from sources downloaded from https://github.com/mimblewimble/grin. There's also official_binary image which uses official binaries from Releases section of https://github.com/mimblewimble/grin.
 
-Image is built on Coin Metrics infrastructure. [CI logs](https://gitlab.com/coinmetrics/fullnodes/grin/pipelines)
+The default image is built on Coin Metrics infrastructure. The official_binary image is built on shared Gitlab CI runners provided by Gitlab.com. [CI logs](https://gitlab.com/coinmetrics/fullnodes/grin/pipelines)
 
 ## License
 

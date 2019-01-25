@@ -2,11 +2,20 @@ image: docker:latest
 services:
 - docker:dind
 
-docker_image:
+docker_image_built_binary:
   stage: build
   script:
-  - ./build.sh
+  - cd built_binary && ./build.sh
   tags:
   - coinmetrics-build-runner
+  - linux
+  - docker
+
+docker_image_official_binary:
+  stage: build
+  script:
+  - cd official_binary && ./build.sh
+  tags:
+  - shared
   - linux
   - docker
