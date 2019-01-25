@@ -2,8 +2,8 @@
 
 set -e
 
-export VERSION=$(cat version.txt)
-export VERSION_LONG=$(cat version_long.txt)
+export VERSION=$(cat ../version.txt)
+export VERSION_LONG=$(cat ../version_long.txt)
 echo "Image version ${VERSION} (long ${VERSION_LONG})."
 
 echo "Building image..."

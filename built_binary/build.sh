@@ -2,7 +2,7 @@
 
 set -e
 
-export VERSION=$(cat version.txt)
+export VERSION=$(cat ../version.txt)
 echo "Image version ${VERSION}."
 
 echo "Building image..."
