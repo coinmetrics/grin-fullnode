@@ -10,7 +10,7 @@ RUN set -ex; \
 
 ARG VERSION
 
-RUN curl -L https://github.com/mimblewimble/grin/releases/download/v${VERSION}/grin-v${VERSION}-linux-amd64.tar.gz | tar -xz -C /usr/bin/
+RUN curl -L https://github.com/mimblewimble/grin/releases/download/v${VERSION}/grin-v${VERSION}-linux-amd64.tar.gz | tar -xz --strip-components=1 -C /usr/bin/
 
 RUN useradd -m -u 1000 -s /bin/bash runner
 USER runner
