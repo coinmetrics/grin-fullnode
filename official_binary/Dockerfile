@@ -9,9 +9,8 @@ RUN set -ex; \
 	rm -rf /var/lib/apt/lists/*
 
 ARG VERSION
-ARG VERSION_LONG
 
-RUN curl -L https://github.com/mimblewimble/grin/releases/download/v${VERSION}/grin-v${VERSION_LONG}-linux-amd64.tgz | tar -xz -C /usr/bin/
+RUN curl -L https://github.com/mimblewimble/grin/releases/download/v${VERSION}/grin-v${VERSION}-linux-amd64.tar.gz | tar -xz -C /usr/bin/
 
 RUN useradd -m -u 1000 -s /bin/bash runner
 USER runner
